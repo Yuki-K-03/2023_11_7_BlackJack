@@ -3,11 +3,11 @@
 #include "Player.h"
 #include "Dealer.h"
 #include "Shoe.h"
-//#define DEBUG
+#define DEBUG
 using namespace std;
 
-const char* CARD_NUMBER[] = { " ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
-const char* CARD_SUIT[] = { "heart", "diamond", "spade", "club" };
+const char* CARD_NUMBER[] = { "  ", " A", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9", "10", " J", " Q", " K" };
+const char* CARD_SUIT[] = { "  heart", "diamond", "  spade", "   club" };
 
 void Deal(CPlayer& cPlayer, CDealer& cDealer, CShoe& cShoe);
 void Player(CPlayer& cPlayer, CShoe& cShoe);

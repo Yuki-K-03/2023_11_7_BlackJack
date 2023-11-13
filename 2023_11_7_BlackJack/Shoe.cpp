@@ -27,7 +27,10 @@ void CShoe::get_cardShoe(s_card &s_card) {
 
 void CShoe::Show_cradShoe() {
 	for (int i = 0; i <= _cardSize; i++) {
-		printf("%d:%s, ", _cardShoe[i].cardNum, CARD_SUIT[_cardShoe[i].cardSuit]);
+		printf("%s:%s  ", CARD_NUMBER[_cardShoe[i].cardNum], CARD_SUIT[_cardShoe[i].cardSuit]);
+		if ((i + 1) % 7 == 0) {
+			printf("\n");
+		}
 	}
 	printf("\n");
 }
