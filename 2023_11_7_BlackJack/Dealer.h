@@ -3,5 +3,6 @@
 
 class CDealer :
 	public CCard {
-
+public :
+	s_card UpCard();
 };

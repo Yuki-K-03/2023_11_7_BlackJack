@@ -22,9 +22,6 @@ CShoe::CShoe() {
 }
 void CShoe::get_cardShoe(s_card &s_card) {
 	s_card = _cardShoe[_cardSize--];
-	/*s_card.cardNum = _cardShoe[_cardSize].cardNum;
-	s_card.cardSuit = _cardShoe[_cardSize].cardSuit;
-	_cardSize --;*/
 }
 
 void CShoe::Show_cradShoe() {

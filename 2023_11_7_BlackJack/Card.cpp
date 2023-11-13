@@ -20,10 +20,6 @@ int CCard::Get_hamdSize() {
 	return _handSize;
 }
 
-s_card CCard::Get_cardHand(int size) {
-	return _cardHand[size];
-}
-
 void CCard::ShowHand() {
 	for (int i = 0; i < _handSize; i++) {
 		printf("num:%s, suit:%s\n", CARD_NUMBER[_cardHand[i].cardNum], CARD_SUIT[_cardHand[i].cardSuit]);

@@ -6,7 +6,6 @@
 #define DEBUG
 using namespace std;
 
-
 const char* CARD_NUMBER[] = { " ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
 const char* CARD_SUIT[] = { "heart", "diamond", "spade", "club" };
 
@@ -25,6 +24,7 @@ int main(){
 	printf("\n");
 #endif // DEBUG
 
+	// ディール
 	Deal(cPlayer, cDealer, cShoe);
 
 #ifdef DEBUG
@@ -63,9 +63,9 @@ void Deal(CPlayer& cPlayer, CDealer& cDealer, CShoe& cShoe) {
 	cDealer.Hit_card(cShoe, 2);
 	// アップカード
 	printf("アップカード\n");
-	printf("num:%s, suit:%s\n", CARD_NUMBER[cDealer.Get_cardHand(0).cardNum], CARD_SUIT[cDealer.Get_cardHand(0).cardSuit]);
+	printf("num:%s, suit:%s\n", CARD_NUMBER[cDealer.UpCard().cardNum], CARD_SUIT[cDealer.UpCard().cardSuit]);
 	// スコア表示
-	printf("Score:%s + a\n\n", CARD_NUMBER[cDealer.Get_cardHand(0).cardNum]);
+	printf("Score:%s + a\n\n", CARD_NUMBER[cDealer.UpCard().cardNum]);
 
 	// 初手プレイヤ
 	cPlayer.Hit_card(cShoe, 2);
