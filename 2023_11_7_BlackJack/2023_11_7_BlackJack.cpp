@@ -3,7 +3,7 @@
 #include "Player.h"
 #include "Dealer.h"
 #include "Shoe.h"
-#define DEBUG
+//#define DEBUG
 using namespace std;
 
 const char* CARD_NUMBER[] = { " ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
@@ -33,15 +33,12 @@ int main(){
 	printf("\n");
 #endif // DEBUG
 
-	// ゲーム開始
-	printf("-------- ゲーム開始 --------\n");
-
 	// プレイヤ
-	printf("----- プレイヤのターン -----\n");
+	printf("\n----- プレイヤのターン -----\n");
 	Player(cPlayer, cShoe);
 
 	// ディーラー
-	printf("---- ディーラーのターン ----\n");
+	printf("\n---- ディーラーのターン ----\n");
 	Dealer(cDealer, cShoe);
 
 	// 勝利判定
@@ -108,20 +105,20 @@ void Dealer(CDealer& cDealer, CShoe& cShoe) {
 }
 
 void Result(CPlayer cPlayer, CDealer cDealer) {
-	printf("---------- 勝　敗 ----------\n");
-	if (cPlayer.SumScore() > 21 && cDealer.SumScore() < 21) {
-		printf("\nディーラーの勝利\n");
+	printf("\n---------- 勝　敗 ----------\n");
+	if (cPlayer.SumScore() > 21) {
+		printf("ディーラーの勝利\n");
 	}
-	else if (cDealer.SumScore() > 21 && cPlayer.SumScore() < 21) {
-		printf("\nプレイヤの勝利\n");
+	else if (cDealer.SumScore() > 21) {
+		printf("プレイヤの勝利\n");
 	}
 	else if (cPlayer.SumScore() > cDealer.SumScore()) {
-		printf("\nプレイヤの勝利\n");
+		printf("プレイヤの勝利\n");
 	}
 	else if (cDealer.SumScore() > cPlayer.SumScore()) {
-		printf("\nディーラーの勝利\n");
+		printf("ディーラーの勝利\n");
 	}
 	else {
-		printf("ドロー\n");
+		printf("プッシュ\n");
 	}
 }
