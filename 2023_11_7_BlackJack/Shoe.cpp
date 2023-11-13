@@ -20,6 +20,7 @@ CShoe::CShoe() {
 
 	_cardSize = CARD_MAX - 1;
 }
+
 void CShoe::get_cardShoe(s_card &s_card) {
 	s_card = _cardShoe[_cardSize--];
 }

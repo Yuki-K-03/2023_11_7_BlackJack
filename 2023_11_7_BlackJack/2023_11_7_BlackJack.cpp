@@ -36,7 +36,6 @@ int main(){
 	// ゲーム開始
 	printf("-------- ゲーム開始 --------\n");
 
-
 	// プレイヤ
 	printf("----- プレイヤのターン -----\n");
 	Player(cPlayer, cShoe);
