@@ -1,32 +1,32 @@
 #include <iostream>
-#include "Card.h"
+#include "Deck.h"
 #include "Shoe.h"
 
-CCard::CCard() {
-	for (int i = 0; i < sizeof(_cardHand) / sizeof(_cardHand); i++) {
+CDeck::CDeck() {
+	for (int i = 0; i < 20; i++) {
 		_cardHand[i].cardNum = 0;
 		_cardHand[i].cardSuit = 0;
 	}
 	_handSize = 0;
 }
 
-void CCard::Hit_card(CShoe& cShoe, int size) {
+void CDeck::Hit_card(CShoe& cShoe, int size) {
 	for (int i = 0; i < size; i++) {
 		cShoe.get_cardShoe(_cardHand[_handSize++]);
 	}
 }
 
-int CCard::Get_hamdSize() {
+int CDeck::Get_hamdSize(){
 	return _handSize;
 }
 
-void CCard::ShowHand() {
+void CDeck::ShowHand() {
 	for (int i = 0; i < _handSize; i++) {
 		printf("num:%s, suit:%s\n", CARD_NUMBER[_cardHand[i].cardNum], CARD_SUIT[_cardHand[i].cardSuit]);
 	}
 }
 
-int CCard::SumScore() {
+int CDeck::SumScore() {
 	int sumScore = 0;
 	bool b_Ace = false;
 	for (int i = 0; i < _handSize; i++) {

@@ -1,7 +1,8 @@
 ﻿#include <cstdio>
 #include <iostream>
-#include "Player.h"
-#include "Dealer.h"
+#include<ctime>
+#include "PlayerDeck.h"
+#include "DealerDeck.h"
 #include "Shoe.h"
 #define DEBUG
 using namespace std;
@@ -9,15 +10,15 @@ using namespace std;
 const char* CARD_NUMBER[] = { "  ", " A", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9", "10", " J", " Q", " K" };
 const char* CARD_SUIT[] = { "  heart", "diamond", "  spade", "   club" };
 
-void Deal(CPlayer& cPlayer, CDealer& cDealer, CShoe& cShoe);
-void Player(CPlayer& cPlayer, CShoe& cShoe);
-void Dealer(CDealer& cDealer, CShoe& cShoe);
-void Result(CPlayer cPlayer, CDealer cDealer);
+void Deal(CPlayerDeck& cPlayer, CDealerDeck& cDealer, CShoe& cShoe);
+void Player(CPlayerDeck& cPlayer, CShoe& cShoe);
+void Dealer(CDealerDeck& cDealer, CShoe& cShoe);
+void Result(CPlayerDeck cPlayer, CDealerDeck cDealer);
 
 int main(){
 	CShoe cShoe;
-	CPlayer cPlayer;
-	CDealer cDealer;
+	CPlayerDeck cPlayer;
+	CDealerDeck cDealer;
 
 #ifdef DEBUG
 	cShoe.Show_cradShoe();
@@ -53,7 +54,7 @@ int main(){
 	return 0;
 }
 
-void Deal(CPlayer& cPlayer, CDealer& cDealer, CShoe& cShoe) {
+void Deal(CPlayerDeck& cPlayer, CDealerDeck& cDealer, CShoe& cShoe) {
 	printf("--------- ディール ---------\n");
 	// 初手ディーラー
 	cDealer.Hit_card(cShoe, 2);
@@ -73,7 +74,7 @@ void Deal(CPlayer& cPlayer, CDealer& cDealer, CShoe& cShoe) {
 	printf("\n");
 }
 
-void Player(CPlayer& cPlayer, CShoe& cShoe) {
+void Player(CPlayerDeck& cPlayer, CShoe& cShoe) {
 	int select = 0;
 
 	do {
@@ -91,7 +92,7 @@ void Player(CPlayer& cPlayer, CShoe& cShoe) {
 	} while (select != 1 && cPlayer.SumScore() <= 21);
 }
 
-void Dealer(CDealer& cDealer, CShoe& cShoe) {
+void Dealer(CDealerDeck& cDealer, CShoe& cShoe) {
 	cDealer.ShowHand();
 	printf("Score:%d\n", cDealer.SumScore());
 	while (cDealer.SumScore() < 17) {
@@ -104,7 +105,7 @@ void Dealer(CDealer& cDealer, CShoe& cShoe) {
 	}
 }
 
-void Result(CPlayer cPlayer, CDealer cDealer) {
+void Result(CPlayerDeck cPlayer, CDealerDeck cDealer) {
 	printf("\n---------- 勝　敗 ----------\n");
 	if (cPlayer.SumScore() > 21) {
 		printf("ディーラーの勝利\n");

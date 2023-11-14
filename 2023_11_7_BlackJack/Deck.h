@@ -13,13 +13,13 @@ const int CARD_MAX = 52;
 extern const char* CARD_SUIT[4];
 extern const char* CARD_NUMBER[14];
 
-class CCard {
+class CDeck {
 protected:
 	s_card _cardHand[20] ;
 	int _handSize;
 
 public:
-	CCard();
+	CDeck();
 
 public:
 	void Hit_card(CShoe& cShoe, int size = 1);

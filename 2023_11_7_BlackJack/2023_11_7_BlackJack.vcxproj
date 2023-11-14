@@ -128,15 +128,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="2023_11_7_BlackJack.cpp" />
-    <ClCompile Include="Card.cpp" />
-    <ClCompile Include="Dealer.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Deck.cpp" />
+    <ClCompile Include="DealerDeck.cpp" />
+    <ClCompile Include="PlayerDeck.cpp" />
     <ClCompile Include="Shoe.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Card.h" />
-    <ClInclude Include="Dealer.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Deck.h" />
+    <ClInclude Include="DealerDeck.h" />
+    <ClInclude Include="PlayerDeck.h" />
     <ClInclude Include="Shoe.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

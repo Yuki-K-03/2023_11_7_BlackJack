@@ -11,7 +11,6 @@ CShoe::CShoe() {
 		_cardShoe[i].cardSuit = i / NUMBER_MAX;
 	}
 
-
 	int randNum = 0;
 	for (int i = 1; i <= CARD_MAX - 1; i++) {
 		randNum = rand() % (CARD_MAX - i);
@@ -27,7 +26,8 @@ void CShoe::get_cardShoe(s_card &s_card) {
 
 void CShoe::Show_cradShoe() {
 	for (int i = 0; i <= _cardSize; i++) {
-		printf("%s:%s  ", CARD_NUMBER[_cardShoe[i].cardNum], CARD_SUIT[_cardShoe[i].cardSuit]);
+		printf("%sF%s  \n", CARD_NUMBER[_cardShoe[i].cardNum], CARD_SUIT[_cardShoe[i].cardSuit]);
+		printf("%2d:%2d\n", _cardShoe[i].cardNum, _cardShoe[i].cardSuit);
 		if ((i + 1) % 7 == 0) {
 			printf("\n");
 		}

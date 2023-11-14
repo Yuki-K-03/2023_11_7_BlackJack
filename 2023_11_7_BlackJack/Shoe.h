@@ -1,5 +1,5 @@
 #pragma once
-#include "Card.h"
+#include "Deck.h"
 
 class CShoe {
 private:
