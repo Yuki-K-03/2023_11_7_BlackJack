@@ -1,8 +1,8 @@
 #pragma once
 #include "Card.h"
 
-class CDealer :
-	public CCard {
+class CDealerDeck :
+	public CDeck {
 public :
 	s_card UpCard();
 };

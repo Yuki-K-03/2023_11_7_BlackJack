@@ -1,7 +1,7 @@
 #pragma once
 #include "Card.h"
 
-class CPlayer :
-	public CCard {
+class CPlayerDeck :
+	public CDeck {
 
 };
